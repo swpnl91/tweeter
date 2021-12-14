@@ -1,12 +1,12 @@
 header {
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 520px;  
   width: 100%;
   align-items: center;
   background-color: #00BD9D;
   background-image: url("https://images.pexels.com/photos/7130535/pexels-photo-7130535.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-  padding-top: 45px;
+  padding-top: 160px;
 }
 
 

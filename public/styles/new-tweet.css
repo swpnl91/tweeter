@@ -51,3 +51,11 @@
   font-family: 'Bungee', cursive;
   text-shadow: 3px 3px #c1c4c6;
 }
+
+.warn {
+  color: #ee9b00;
+}
+
+.negative-count {
+  color: red;
+}
