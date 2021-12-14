@@ -1,0 +1,33 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+  height: 120px;
+  /* background-color: #4056A1; */
+  background-color: #0E1116;
+  /* color: #FFFFFF; */
+  color: #ffd60a;
+  padding: 2em 1.5em 0 1.5em;
+  z-index: 1;
+  width: 100%;
+}
+
+.write-new {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #FFFFFF;
+}
+
+.new-post {
+  display: flex;
+  flex-direction: column;
+}
+
+.fas {
+  align-self: center;
+  color: tomato;
+  padding-top: 8px;
+  padding-bottom: 5px;
+}
+
+
+
