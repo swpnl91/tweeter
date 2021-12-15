@@ -6,30 +6,46 @@
 
 $(document).ready(() => {
 
-  const tweetData = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
+  // const tweetData = [
+  //   {
+  //     "user": {
+  //       "name": "Newton",
+  //       "avatars": "https://i.imgur.com/73hZDYK.png",
+  //       "handle": "@SirIsaac"
+  //     },
+  //     "content": {
+  //       "text": "If I have seen further it is by standing on the shoulders of giants"
+  //     },
+  //     "created_at": 1639417642068
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "Descartes",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@rd"
+  //     },
+  //     "content": {
+  //       "text": "Je pense , donc je suis"
+  //     },
+  //     "created_at": 1639504042068
+  //   }
+  // ];
+
+  const loadTweets = () => {
+    $.ajax({
+      url: 'http://localhost:8080/tweets/',
+      method: 'GET',
+      dataType: 'json',
+      success: (tweets) => {
+        renderTweets(tweets);
       },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1639417642068
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1639504042068
-    }
-  ];
+      error: (err) => {
+        console.log(`error: ${err}`);
+      }
+    });
+  };
+
+  loadTweets();
     
   
   const renderTweets = function (tweets) {
@@ -68,6 +84,26 @@ $(document).ready(() => {
     return $tweet;
   };
   
-  renderTweets(tweetData);
+  // renderTweets(tweetData);
+
+  const $form = $('.submit-tweet');
+
+  $form.on('submit', function(event) {
+    event.preventDefault();
+    const charCount = $('.counter').val();
+    const textAreaMessage = $('#tweet-text').val();
+    const serializedData = $(this).serialize();
+
+    if (charCount <= 0 || charCount > 140) {
+      alert('Pleas follow the tweeting rules');
+    } else if (textAreaMessage === "") {
+      alert('Tweet cannot be blank');
+    } else {
+      $.post('http://localhost:8080/tweets/', serializedData, (response) => {
+        console.log(response);
+        loadTweets();
+      })
+    }
+  })
 
 });
