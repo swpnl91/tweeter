@@ -47,6 +47,12 @@
   border-radius: 50px;
 }
 
+.bottom-tweet > button:hover {
+  opacity: 1;
+  box-shadow: 8px 5px 6px #ff62a9;
+}
+
+
 .counter {
   font-family: 'Bungee', cursive;
   text-shadow: 3px 3px #c1c4c6;
