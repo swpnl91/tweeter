@@ -6,13 +6,13 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-!["screenshot description"](#)
+!["Screenshot of desktop responsive design"](https://github.com/swpnl91/tweeter/blob/master/docs/Desktop%20responsive%20design..png?raw=true)
 
-!["screenshot description"](#)
+!["Screenshot of mobile responsive design"](https://github.com/swpnl91/tweeter/blob/master/docs/Mobile%20responsive%20design.png?raw=true)
 
-!["screenshot description"](#)
+!["Screenshot of character counter"](https://github.com/swpnl91/tweeter/blob/master/docs/Character%20counter.png?raw=true)
 
-!["screenshot description"](#)
+!["Screenshot of error message for blank tweet"](https://github.com/swpnl91/tweeter/blob/master/docs/Error%20message%20for%20blank%20tweet.png?raw=true)
 
 ## Getting Started
 
