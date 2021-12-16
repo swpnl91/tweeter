@@ -1,0 +1,26 @@
+#error-charCount {
+  color: tomato;
+  font-weight: bolder;
+  border-style: solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 25px;
+  background-color: #f8d4d5;
+}
+
+#error-blank {
+  color: tomato;
+  font-weight: bolder;
+  border-style: solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 25px;
+  background-color: #f8d4d5;
+}
+
+.fa-exclamation-triangle {
+  padding: 25px 25px;
+  font-size: xx-large;
+}

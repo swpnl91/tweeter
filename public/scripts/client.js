@@ -6,30 +6,15 @@
 
 $(document).ready(() => {
 
-  // const tweetData = [
-  //   {
-  //     "user": {
-  //       "name": "Newton",
-  //       "avatars": "https://i.imgur.com/73hZDYK.png",
-  //       "handle": "@SirIsaac"
-  //     },
-  //     "content": {
-  //       "text": "If I have seen further it is by standing on the shoulders of giants"
-  //     },
-  //     "created_at": 1639417642068
-  //   },
-  //   {
-  //     "user": {
-  //       "name": "Descartes",
-  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
-  //       "handle": "@rd"
-  //     },
-  //     "content": {
-  //       "text": "Je pense , donc je suis"
-  //     },
-  //     "created_at": 1639504042068
-  //   }
-  // ];
+  $('#error-charCount').hide();
+  $('#error-blank').hide();
+
+  // HTML content check for tweets. Allows HTML code to be posted in tweets.
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   const loadTweets = () => {
     $.ajax({
@@ -49,7 +34,7 @@ $(document).ready(() => {
     
   
   const renderTweets = function (tweets) {
-
+    $('.tweet-container').empty();                 // ??????
     for (const tweet of tweets) {
       const $tweetr = createTweetElement(tweet);
       $('.tweet-container').prepend($tweetr);
@@ -70,7 +55,7 @@ $(document).ready(() => {
         </div>
         <h4>${tweet.user.handle}</h4>
       </header>
-       <p>${tweet.content.text}</p>
+       <p>${escape(tweet.content.text)}</p>
       <footer>
         <span>${time}</span>
         <div class="flag">
@@ -95,15 +80,19 @@ $(document).ready(() => {
     const serializedData = $(this).serialize();
 
     if (charCount <= 0 || charCount > 140) {
-      alert('Pleas follow the tweeting rules');
+      $('#error-charCount').show(1000);
     } else if (textAreaMessage === "") {
-      alert('Tweet cannot be blank');
+      $('#error-blank').show(1000);
     } else {
+      $('#error-charCount').hide(1000);              // ?????? 1000???
+      $('#error-blank').hide(1000);
+
       $.post('http://localhost:8080/tweets/', serializedData, (response) => {
-        console.log(response);
         loadTweets();
+        $('#tweet-text').val('');                    // ??????
+        $('.counter').val('140');                    //  ??????
       })
     }
-  })
+  });
 
 });

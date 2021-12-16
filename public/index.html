@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet-feed.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/error-message.css" type="text/css" />
 
 
     <!-- External JS -->
@@ -54,6 +55,18 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <br>
+        <div id="error-charCount">
+          <i class="fas fa-exclamation-triangle"></i>
+          <p>Please respect the character limit!</p>
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <div  id="error-blank">
+          <i class="fas fa-exclamation-triangle"></i>
+          <p>You cannot post a blank tweet!</p>
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <br>
         <form class="submit-tweet" action="/tweets/" method="POST">
           <div class="top-tweet">
             <label for="tweet-text">What are you humming about?</label>
