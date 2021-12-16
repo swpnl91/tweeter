@@ -14,7 +14,9 @@ h2 {
   color: #FFFFFF;
   text-shadow:3px -3px #fd3e94;
   border: 1;
-  font-size: 30px;
+  font-size: 25px;
   margin-top: 5px;
   font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  
 }
