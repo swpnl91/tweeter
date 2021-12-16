@@ -1,0 +1,35 @@
+
+
+@media only screen and (max-width: 949px) {
+  .nav-class {
+    background-color: #00BD9D;
+  }
+ }
+
+
+
+@media only screen and (min-width: 950px) {
+  .responsive-design {
+    display: flex;
+    position: center;
+    padding-top: 150px; 
+  }
+
+  .header1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 50px;
+    margin-top: 80px;
+
+  }
+
+  .profile-avatar {
+    padding-bottom: 20px;
+  }
+
+  .profile-name {
+    padding-bottom: 120px;
+  }
+ }
