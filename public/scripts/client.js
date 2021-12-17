@@ -6,10 +6,11 @@
 
 $(document).ready(() => {
 
+  // Hiding HTML error messages
   $('#error-charCount').hide();
   $('#error-blank').hide();
 
-  // HTML content check for tweets. Allows HTML code to be posted in tweets.
+  // HTML content check for tweets. Allows HTML code to be posted in tweets and avoid getting hacked.
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -30,14 +31,14 @@ $(document).ready(() => {
     });
   };
 
-  loadTweets();
+  loadTweets();               // Invoking the function to load existing tweets (Newton/Descartes) and fill up tweet-container 
     
   
   const renderTweets = function (tweets) {
-    $('.tweet-container').empty();                 // ??????
+    $('.tweet-container').empty();                 // So that the tweet-container doesn't repeat existing tweets.
     for (const tweet of tweets) {
       const $tweetr = createTweetElement(tweet);
-      $('.tweet-container').prepend($tweetr);
+      $('.tweet-container').prepend($tweetr);          // Prepend - so that tweets are displayed in descending (time) order.
     }
   };
 
@@ -84,13 +85,13 @@ $(document).ready(() => {
     } else if (textAreaMessage === "") {
       $('#error-blank').show(1000);
     } else {
-      $('#error-charCount').hide(1000);              // ?????? 1000???
+      $('#error-charCount').hide(1000);              
       $('#error-blank').hide(1000);
 
       $.post('http://localhost:8080/tweets/', serializedData, (response) => {
         loadTweets();
-        $('#tweet-text').val('');                    // ??????
-        $('.counter').val('140');                    //  ??????
+        $('#tweet-text').val('');                    // To clear tweet-text area after tweet is posted.
+        $('.counter').val('140');                    //  To get the counter back to 140 after tweet is posted.
       })
     }
   });

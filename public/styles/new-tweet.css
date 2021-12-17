@@ -35,10 +35,8 @@
 }
 
 .bottom-tweet > button {
-  /* background-color: #4056a1; */
   background-color: #ffd60a;
   font-size: 0.85em;
-  /* color: #ffffff; */
   color: #0E1116;
   border: 0;
   height: 2.5rem;
@@ -51,7 +49,6 @@
   opacity: 1;
   box-shadow: 8px 5px 6px #ff62a9;
 }
-
 
 .counter {
   font-family: 'Bungee', cursive;
